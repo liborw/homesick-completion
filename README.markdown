@@ -1,0 +1,1 @@
+Bash completion for homesick.
