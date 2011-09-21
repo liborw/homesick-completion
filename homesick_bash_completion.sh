@@ -38,11 +38,6 @@ _homesick_complete()
         COMPREPLY=( $(compgen -W "${repos}" -- ${cur}) )
         return
         ;;
-    # Commands that take an path
-    generate)
-        COMPREPLY=( $(compgen -X -d ${cur}) )
-        return
-        ;;
     # Commands that take command
     help)
         COMPREPLY=( $(compgen -W "${actions}" -- ${cur}) )
