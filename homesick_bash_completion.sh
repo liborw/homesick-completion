@@ -47,7 +47,7 @@ _homesick_complete()
     track)
         if [[ "$num" -eq 2 ]]; then
             COMPREPLY=( $(compgen -X -f ${cur}) )
-        elif [[ "$num" -eq 3 ]]; then
+        elif [[ "$num" -ge 3 ]]; then
             COMPREPLY=( $(compgen -W "${repos}" -- ${cur}) )
         fi
         return
