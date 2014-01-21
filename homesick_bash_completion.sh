@@ -6,7 +6,7 @@ _homesick_complete()
 {
     local cur="${COMP_WORDS[COMP_CWORD]}"
     local options="--skip --force --pretend --quiet"
-    local actions="clone commit diff generate help list pull push rc show_path status symlink track unlink"
+    local actions="cd clone commit destroy diff generate help list open pull push rc show_path status symlink track unlink version"
     local repos=$(\ls ~/.homesick/repos)
 
     # Subcommand list
@@ -34,7 +34,7 @@ _homesick_complete()
 
     case "$prev" in
     # Commands that take a castle
-    commit|diff|pull|push|rc|show_path|status|symlink|unlink)
+    cd|commit|destroy|diff|open|pull|push|rc|show_path|status|symlink|unlink)
         COMPREPLY=( $(compgen -W "${repos}" -- ${cur}) )
         return
         ;;
